@@ -1,6 +1,6 @@
 #FileLock
-#Fri Dec 08 13:49:30 UTC 2023
+#Fri Dec 08 18:37:55 CET 2023
+server=192.168.0.171\:62977
 hostName=TUFIK-A17
-id=18c49b0c247f4a478440ba0f1d5eab8dec8a134bd1e
 method=file
-server=192.168.0.171\:60497
+id=18c4a81d9317e9c5cd8896fde3aae1a3f3c0ac075e3
