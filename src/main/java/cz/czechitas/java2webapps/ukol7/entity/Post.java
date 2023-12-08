@@ -1,9 +1,9 @@
 package cz.czechitas.java2webapps.ukol7.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.time.LocalDate;
 
@@ -11,15 +11,24 @@ import java.time.LocalDate;
 public class Post {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    // TODO: 08.12.2023 doplnit restrikce
 
+    @UniqueElements
+    @NotNull
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String slug;
+
+    @NotNull
+    @Size(max = 100, message = "{validation.name.size.too_long}")
     private String author;
+    @NotNull
+    @Size(max = 255, message = "{validation.name.size.too_long}")
     private String title;
+    @NotNull
     private String perex;
+    @NotNull
     private String body;
     private LocalDate published;
 

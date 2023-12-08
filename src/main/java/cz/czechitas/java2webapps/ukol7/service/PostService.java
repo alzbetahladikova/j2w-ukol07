@@ -18,14 +18,18 @@ public class PostService {
 
     @Autowired
 
-    public  PostService (PostRepository postRepository) {this.postRepository = postRepository;}
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
-    public Page<Post> seznamPostu () {
+    public Page<Post> seznamPostu() {
 
         return postRepository.findAllByOrderByPublishedDesc(PageRequest.of(0, 20));
     }
 
-    public List <Post> singlePost(String slug) { return postRepository.findBySlugStartingWithIgnoreCase (slug);}
+    public List<Post> singlePost(String slug) {
+        return postRepository.findBySlugStartingWithIgnoreCase(slug);
+    }
 
 
 }

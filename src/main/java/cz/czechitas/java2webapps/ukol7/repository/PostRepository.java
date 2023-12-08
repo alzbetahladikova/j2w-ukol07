@@ -11,9 +11,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface PostRepository extends JpaRepository <Post, Long> {
+public interface PostRepository extends JpaRepository<Post, Long> {
 
-   Page<Post>findAllByOrderByPublishedDesc (PageRequest pageRequest);
+    Page<Post> findAllByOrderByPublishedDesc(PageRequest pageRequest);
+
     List<Post> findBySlugStartingWithIgnoreCase(String slug);
 
 }

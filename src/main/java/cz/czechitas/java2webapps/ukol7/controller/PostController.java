@@ -17,15 +17,18 @@ public class PostController {
 
     private final PostService service;
 
-    public PostController (PostService service) {this.service=service;}
+    public PostController(PostService service) {
+        this.service = service;
+    }
 
-    @GetMapping ("/")
-    public ModelAndView zakladniSeznam () {
+    @GetMapping("/")
+    public ModelAndView zakladniSeznam() {
         return new ModelAndView("index")
                 .addObject("posty", service.seznamPostu());
     }
-    @GetMapping ("/post/{slug}")
-    public ModelAndView singlePost (@PathVariable String slug) {
+
+    @GetMapping("/post/{slug}")
+    public ModelAndView singlePost(@PathVariable String slug) {
         return new ModelAndView("post")
                 .addObject("posty", service.singlePost(slug));
     }
