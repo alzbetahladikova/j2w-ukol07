@@ -13,7 +13,7 @@
 <main class="container">
 
     <h1>Přehled článků</h1>
-    [#list posty]
+    [#list posty.content]
         <table class="u-full-width">
         <thead>
         <tr>
@@ -26,7 +26,7 @@
         <tbody>
         [#items as post]
             <tr>
-                <a href="/post/${post.slug}" li><td>${post.slug}</td></a>
+                <td><a href="/post/${post.slug}">${post.slug}</a></td>
                 <td>${post.author}</td>
                 <td>${post.published?date?string}</td>
                 <td>${post.title?no_esc}</td>
